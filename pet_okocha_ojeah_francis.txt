@@ -1,0 +1,56 @@
+#There is code repetition; quite tedious
+class Cat:
+    def __init__(self, thename, theage):
+        self.name = thename
+        self.age = theage
+    
+    def speak(self):
+        print("Meow")
+class Dog:
+    def __init__(self, thename, theage):
+        self.name = thename
+        self.age = theage
+        
+    def speak(self):
+        print("Bark")
+
+c = Cat("Bill", 34)
+c.speak()
+d = Dog("Jill", 25)
+d.speak()
+
+#Introduced a super class in which sub classes derived methods
+class Pet:
+    def __init__(self, thename, theage):
+        self.name = thename
+        self.age = theage
+        
+    def show(self):
+        print(f"I am {self.name} and I am {self.age} years old")
+        
+    def speak(self):
+        print("I don't know what I say")
+        
+class Cat(Pet):
+    def speak(self):
+        print("Meow")
+        
+class Dog(Pet):
+    def speak(self):
+        print("Bark")
+        
+class Fish(Pet):
+    pass
+
+p = Pet("Tim", 19)
+p.show()
+p.speak()
+c = Cat("Bill", 34)
+c.show()
+c.speak()
+d = Dog("Jill", 25)
+d.show()
+d.speak()
+f = Fish("Bubbles", 10)
+f.show()
+f.speak()
